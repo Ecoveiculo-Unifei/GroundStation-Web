@@ -1,18 +1,18 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import altair as alt
-import plotly.graph_objects as go
-import matplotlib.pyplot as plt
-import plotly.offline as py
-import plotly.graph_objs as go
+#import numpy as np
+#import altair as alt
+#import plotly.graph_objects as go
+#import matplotlib.pyplot as plt
+#import plotly.offline as py
+#import plotly.graph_objs as go
 from serial_lib import EspLora
-from datetime import datetime
+#from datetime import datetime
 from PIL import Image
-import time
-import os
-import sys
-import logging
+#import time
+#import os
+#import sys
+#import logging
 
 st.set_page_config(page_title="EcoVeículo", page_icon="Logo.ico", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
