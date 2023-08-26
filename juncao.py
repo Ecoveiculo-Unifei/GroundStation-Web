@@ -14,7 +14,7 @@ from PIL import Image
 #import sys
 #import logging
 
-st.set_page_config(page_title="EcoVeículo", page_icon="Logo.ico", layout="wide", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="EcoVeículo", page_icon="static/Logo.ico", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
 serial_port = "COM6"
 baud_rate = 19200
@@ -24,7 +24,7 @@ top1, top2, top3, top4, top5 = st.columns([1, 1, 1, 1 , 1])
 top1.title('EcoVeículo')
 top1.subheader('Projetando o futuro!')
 
-logo = Image.open('Logo_Eco.png')
+logo = Image.open('static/Logo_Eco.png')
 top5.image(logo)
 
 body1, body2, body3, body4 = st.columns([1,1,1,1])
