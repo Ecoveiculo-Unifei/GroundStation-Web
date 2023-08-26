@@ -1,23 +1,13 @@
 import streamlit as st
 import pandas as pd
-#import numpy as np
-#import altair as alt
-#import plotly.graph_objects as go
-#import matplotlib.pyplot as plt
-#import plotly.offline as py
-#import plotly.graph_objs as go
 from serial_lib import EspLora
-#from datetime import datetime
 from PIL import Image
-#import time
-#import os
-#import sys
-#import logging
+
 
 st.set_page_config(page_title="EcoVeículo", page_icon="static/Logo.ico", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
 serial_port = "COM6"
-baud_rate = 19200
+baud_rate = 115200
 
 top1, top2, top3, top4, top5 = st.columns([1, 1, 1, 1 , 1])
 
@@ -78,7 +68,7 @@ esp.open()
 while True:
     pacote = esp.read()
     if pacote is not None:
-        #msg.write(pacote)
+        msg.write(pacote)
         df = pd.DataFrame([pacote])
         df.set_index("Id",inplace=True)
         dataVelInst.add_rows(df["VelInst"])
@@ -90,6 +80,8 @@ while True:
         metricaVelMedia = metricaVelMedia.metric(label="Vel. Media", value=df["VelMedia"])
         metricaDistancia = metricaDistancia.metric(label="Distancia", value=df["Distancia"])
         metricaRPM = metricaRPM.metric(label="RPM", value=df["RPM"])
+
+
 
 
 msg.warning('Erro')
