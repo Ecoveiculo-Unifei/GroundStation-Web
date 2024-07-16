@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from serial_lib import EspLora
+from serial_lib import EspLora, search
 from PIL import Image
 
 
@@ -62,6 +62,7 @@ dataDistancia = grafDistancia.line_chart(df["Distancia"])
 dataVelMed = grafVelMed.line_chart(df["VelMedia"])
 dataRPM = grafRPM.line_chart(df["RPM"])
 
+st.write(search(comDescricao=True))
 esp = EspLora(serial_port,baud_rate)
 esp.open()
 
